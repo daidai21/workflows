@@ -10,6 +10,7 @@
 
 #include "./../work/work_report.hpp"
 #include "./../workflow/workflow.hpp"
+#include "./../work/work_context.hpp"
 
 namespace workflows {
 
@@ -18,8 +19,8 @@ class WorkFlowEngine {
   WorkFlowEngine();
   ~WorkFlowEngine();
 
-  WorkReport* run(WorkFlow* workflow) {
-    return workflow->call();
+  WorkReport* run(WorkFlow* workflow, WorkContext* workContext) {
+    return workflow->execute(workContext);
   }
 
   static WorkFlowEngine* new_workflowengine() {

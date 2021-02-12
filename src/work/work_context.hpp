@@ -11,12 +11,21 @@
 #include <set>
 #include <string>
 
+#include "./../config/def.hpp"
 #include "./../utils/concurrent_hash_map.hpp"
 
-template <typename ValType>
+namespace workflows {
+
 class WorkContext {
  public:
-  void put();
+  WorkContext() {
+    this->context = new ConcurrentHashMap();
+  }
+
+ public:
+  void put(std::string key, OBJ_PTR val) {
+    this->context->put(key, val);
+  }
 
   void get();
 
@@ -25,7 +34,8 @@ class WorkContext {
   std::string to_str();
 
  private:
-  ConcurrentHashMap<std::string, ValType> context;
+  ConcurrentHashMap* context;
 };
+}  // namespace workflows
 
 #endif  // __WORK_CONTEXT_HPP__

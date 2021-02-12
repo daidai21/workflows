@@ -10,13 +10,13 @@
 
 namespace workflows {
 
-enum WorkStatus {
+enum WorkStatus { // TODO: enum.item 调用
   INITIAL,
   RUNNING,
   FAILED,
   COMPLETED
 };
 
-}  // namespace wfcc
+}  // namespace workflows
 
 #endif  // __WORK_STATUS_HPP__

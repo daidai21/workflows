@@ -24,7 +24,7 @@ class AbstractWorkFlow : public WorkFlow {
     return this->name;
   }
 
- private:
+ protected:
   std::string name;
 };
 

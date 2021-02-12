@@ -8,16 +8,17 @@
 #ifndef __CONCURRENT_HASH_MAP_HPP__
 #define __CONCURRENT_HASH_MAP_HPP__
 
+#include "./../config/def.hpp"
+
 namespace workflows {
 
-template <typename KeyType, typename ValType>
 class ConcurrentHashMap {
  public:
-  void put(KeyType key, ValType val);
+  void put(std::string key, OBJ_PTR val);
 
-  ValType get(KeyType key);
+  OBJ_PTR get(std::string key);
 
-  void remove(KeyType key);
+  void remove(std::string key);
 
  private:
   // TODO

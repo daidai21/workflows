@@ -10,23 +10,21 @@
 
 #include <string>
 
+#include "./../utils/UUID.hpp"
+#include "./../work/work_context.hpp"
 #include "./work_report.hpp"
 
 namespace workflows {
 
-template <typename T>
-class Callable {
+class Work {
  public:
-  virtual T* call();
+  std::string get_name() {
+    return random_UUID();
+  }
+
+  WorkReport* execute(WorkContext* workContext);
 };
 
-class Work : public Callable<WorkReport> {
- public:
-  virtual std::string get_name();
-
-  virtual WorkReport* call();
-};
-
-}  // namespace wfcc
+}  // namespace workflows
 
 #endif  // __WORK_HPP__

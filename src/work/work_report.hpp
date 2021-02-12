@@ -8,7 +8,10 @@
 #ifndef __WORK_REPORT_HPP__
 #define __WORK_REPORT_HPP__
 
+#include <exception>
+
 #include "./../config/work_status.hpp"
+#include "./work_context.hpp"
 
 namespace workflows {
 
@@ -16,9 +19,11 @@ class WorkReport {
  public:
   virtual WorkStatus get_status();
 
-  // TODO
+  virtual std::exception get_error();
+
+  virtual WorkContext* get_context();
 };
 
-}  // namespace wfcc
+}  // namespace workflows
 
 #endif  // __WORK_REPORT_HPP__

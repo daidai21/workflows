@@ -1,23 +1,18 @@
 /* ****************************************************************************
- * File Name   : workflow.hpp
+ * File Name   : def.hpp
  * Author      : DaiDai
  * Mail        : daidai4269@aliyun.com
- * Created Time: 二  2/ 9 22:25:03 2021
+ * Created Time: 六  2/13 01:52:12 2021
  *************************************************************************** */
 
-#ifndef __WORKFLOW_HPP__
-#define __WORKFLOW_HPP__
 
-#include "./../work/work_report.hpp"
-#include "./../work/work.hpp"
+#ifndef __DEF_HPP__
+#define __DEF_HPP__
 
 namespace workflows {
 
-class WorkFlow : public Work {
- public:
-
-};
+typedef void* OBJ_PTR;
 
 }  // namespace workflows
 
-#endif  // __WORKFLOW_HPP__
+#endif  // __DEF_HPP__
