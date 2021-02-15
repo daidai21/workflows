@@ -12,7 +12,7 @@
 #include "./../work/work.hpp"
 #include "./../work/work_report.hpp"
 #include <string>
-
+#include <vector>
 
 namespace workflows {
 
@@ -35,7 +35,7 @@ class SequentialFlow : AbstractWorkFlow {
   }
 
  private:
-  std::vector<Work> works;
+  std::vector<Work*> works;
 
  public:
   static class Builder {
