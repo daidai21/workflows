@@ -9,6 +9,7 @@
 
 #include "./src/workflows.hpp"
 
+
 using namespace std;
 using namespace workflows;
 
@@ -32,6 +33,10 @@ class PrintMessageWork : public Work {
 };
 
 int main(int argc, char* argv[]) {
-  WorkFlow* workflow = new RepeatFlow("qwe", new PrintMessageWork("asd"), new WorkReportPredicate());
+  WorkFlowEngine* workFlowEngine = new WorkFlowEngine();
+  // WorkFlow* workflow = new RepeatFlow("qwe", new PrintMessageWork("asd"), new WorkReportPredicate());
+  // WorkContext* workContext = new WorkContext();
+  // WorkReport* workReport = workFlowEngine->run(workflow, workContext);
+
   return 0;
 }

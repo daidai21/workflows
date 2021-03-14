@@ -22,11 +22,11 @@ std::exception DefaultWorkReport::get_error() {
 }
 
 std::string DefaultWorkReport::to_string() {
-  return "DefaultWorkReport {" + 
-      "status=" + this->status + 
-      ", context=" + this->context + 
-      ", error=" + this->error +
-       "}";
+  return std::string("DefaultWorkReport {") + 
+      std::string("status=") + std::string(to_str(this->status)) + 
+      std::string(", context=") + std::string(this->context->to_str()) + 
+      std::string(", error=") + std::string(this->error.what()) +
+      std::string("}");
 }
 
 }  //namespace workflows

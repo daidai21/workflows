@@ -22,10 +22,6 @@ class WorkFlowEngine {
   WorkReport* run(WorkFlow* workflow, WorkContext* workContext) {
     return workflow->execute(workContext);
   }
-
-  static WorkFlowEngine* new_workflowengine() {
-    return new WorkFlowEngine();
-  }
 };
 
 }  // namespace workflows
